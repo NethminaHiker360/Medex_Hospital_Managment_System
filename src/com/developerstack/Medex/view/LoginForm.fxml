@@ -7,13 +7,14 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="469.0" prefWidth="737.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.LoginFormController">
+<AnchorPane fx:id="loginContext" prefHeight="469.0" prefWidth="737.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.LoginFormController">
    <children>
       <ImageView fitHeight="469.0" fitWidth="413.0" layoutX="365.0" style="-fx-opacity: 60%;">
          <image>
@@ -25,10 +26,13 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtEmail" layoutX="35.0" layoutY="73.0" prefHeight="31.0" prefWidth="270.0" promptText="Email" />
-      <JFXPasswordField fx:id="txtPassword" layoutX="35.0" layoutY="154.0" prefHeight="31.0" prefWidth="270.0" promptText="Enter Password here">
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="35.0" layoutY="73.0" prefHeight="31.0" prefWidth="270.0" promptText="Email">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="16.0" />
+         </font></JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="35.0" layoutY="154.0" prefHeight="31.0" prefWidth="270.0" promptText="Enter Password here">
+         <font>
+            <Font name="System Bold" size="16.0" />
          </font></JFXPasswordField>
       <Hyperlink layoutX="207.0" layoutY="206.0" text="Forgot Password ?" underline="true" />
       <JFXRadioButton fx:id="rbtnDoctor" layoutX="35.0" layoutY="258.0" selected="true" text="Doctor">
@@ -52,7 +56,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="381.0" onAction="#createAnAccountOnAction" prefHeight="31.0" prefWidth="270.0" style="-fx-background-color: #202640;" text="Create Account" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="381.0" onAction="#createAnAccountOnAction" prefHeight="31.0" prefWidth="270.0" style="-fx-background-color: #202640;" text="Create an Account" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -75,5 +79,6 @@
             <Font size="12.0" />
          </font>
       </Label>
+      <Separator layoutX="71.0" layoutY="48.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
