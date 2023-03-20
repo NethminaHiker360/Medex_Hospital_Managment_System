@@ -14,10 +14,12 @@ public class DoctorDashboardController {
 
     public void checkUser() throws IOException {
         if(null==Cookie.selectedUser){
-            setUi("DoctorDashboard");
+            setUi("LoginForm");
         }
     }
-
+    public void initialize() throws IOException {
+        checkUser();
+    }
     private void setUi(String location) throws IOException {
         Stage stage = (Stage) DoctorDashboardContext.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/"+location+".fxml"))));

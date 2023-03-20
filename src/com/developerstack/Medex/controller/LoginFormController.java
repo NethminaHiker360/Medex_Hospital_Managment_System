@@ -14,6 +14,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import util.Cookie;
 
 import java.io.IOException;
 
@@ -24,7 +25,7 @@ public class LoginFormController {
     public JFXRadioButton rbtnDoctor;
     public AnchorPane loginContext;
 
-    public void signInOnAction(ActionEvent actionEvent) {
+    public void signInOnAction(ActionEvent actionEvent) throws IOException {
         String email=txtEmail.getText();
         String password=txtPassword.getText();
         AccountType accountType=rbtnDoctor.isSelected()? AccountType.DOCTOR:AccountType.PATIENT;
@@ -33,6 +34,8 @@ public class LoginFormController {
             if (email.trim().toLowerCase().equals(userDto.getEmail())){
                 if(password.equals(userDto.getPassword())){
                     if (accountType.equals(userDto.getAccountType())){
+                        Cookie.selectedUser=userDto;
+                        setUi("DoctorDashBoard");
                         new Alert(Alert.AlertType.WARNING,"Sucsessfully Login!").show();
                         return;
                     }else {
@@ -49,7 +52,10 @@ public class LoginFormController {
     }
 
     public void createAnAccountOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("SignupForm");
+    }
+    private void setUi(String location) throws IOException {
         Stage stage = (Stage) loginContext.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/SignupForm.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/"+location+".fxml"))));
     }
 }
