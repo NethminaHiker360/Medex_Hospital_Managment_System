@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.developerstack.Medex.controller.LoginFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="465.0" prefWidth="681.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="469.0" fitWidth="411.0" layoutX="368.0" style="-fx-opacity: 60%;">
+         <image>
+            <Image url="@../assets/Login_26363.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="313.0" text="Login" textFill="#e40000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField layoutX="35.0" layoutY="73.0" prefHeight="31.0" prefWidth="270.0" promptText="Email" />
+      <JFXPasswordField layoutX="35.0" layoutY="154.0" prefHeight="31.0" prefWidth="270.0" promptText="Enter Password here">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXPasswordField>
+      <Hyperlink layoutX="193.0" layoutY="213.0" text="Forgot Password ?" />
+      <JFXRadioButton layoutX="35.0" layoutY="258.0" selected="true" text="Doctor">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="193.0" layoutY="258.0" text="Patient">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXButton layoutX="35.0" layoutY="301.0" prefHeight="31.0" prefWidth="270.0" style="-fx-background-color: #008CFF;" text="Sign In">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="35.0" layoutY="381.0" prefHeight="31.0" prefWidth="270.0" style="-fx-background-color: #202640;" text="Create Account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="345.0" prefHeight="29.0" prefWidth="313.0" text="OR" textFill="#e40000">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="452.0" text="From - Developer Stack">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="233.0" layoutY="452.0" prefHeight="17.0" prefWidth="125.0" text="Version - 1.0.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
