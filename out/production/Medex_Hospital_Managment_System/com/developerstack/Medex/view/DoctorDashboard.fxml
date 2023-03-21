@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="DoctorDashboardContext" prefHeight="491.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.DoctorDashboardController">
+   <children>
+      <Label alignment="CENTER" layoutY="13.0" prefHeight="29.0" prefWidth="313.0" text="Doctor DashBoard" textFill="#e40000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="55.0" prefHeight="3.0" prefWidth="884.0" />
+      <Label fx:id="lblDate" layoutX="363.0" layoutY="18.0" text="2023-10-12">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="496.0" layoutY="18.0" text="08:10">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="742.0" layoutY="12.0" onAction="#btnLogOutOnAction" prefHeight="21.0" prefWidth="146.0" style="-fx-background-color: #202640;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

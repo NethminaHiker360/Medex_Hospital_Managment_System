@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="signupformContext" prefHeight="499.0" prefWidth="729.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.SignupFormController">
+   <children>
+      <Label layoutX="446.0" layoutY="14.0" text="Register Here" textFill="#e40000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <ImageView fitHeight="506.0" fitWidth="326.0" layoutX="-3.0" layoutY="-4.0" style="-fx-opacity: 90%;">
+         <image>
+            <Image url="@../assets/Register_OPFCFP0.jpg" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtFirstName" labelFloat="true" layoutX="329.0" layoutY="79.0" prefHeight="31.0" prefWidth="190.0" promptText="First Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtLastName" labelFloat="true" layoutX="529.0" layoutY="79.0" prefHeight="31.0" prefWidth="190.0" promptText="Last Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="329.0" layoutY="154.0" prefHeight="37.0" prefWidth="390.0" promptText="Enter Email here">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="329.0" layoutY="233.0" prefHeight="37.0" prefWidth="390.0" promptText="Enter Password here">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXRadioButton fx:id="rbtnDoctor" layoutX="402.0" layoutY="301.0" selected="true" text="Doctor">
+         <toggleGroup>
+            <ToggleGroup fx:id="AccoutType" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="570.0" layoutY="301.0" text="Patient" toggleGroup="$AccoutType" />
+      <JFXButton buttonType="RAISED" layoutX="388.0" layoutY="347.0" onAction="#signupOnAction" prefHeight="31.0" prefWidth="270.0" style="-fx-background-color: #008CFF;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="388.0" layoutY="427.0" onAction="#alreadyhaveanAccountOnAction" prefHeight="31.0" prefWidth="270.0" style="-fx-background-color: #202640;" text="Already have an Account " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="367.0" layoutY="391.0" prefHeight="29.0" prefWidth="313.0" text="OR" textFill="#e40000">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="480.0" text="From - Developer Stack">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="596.0" layoutY="480.0" prefHeight="17.0" prefWidth="125.0" text="Version - 1.0.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="424.0" layoutY="48.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
