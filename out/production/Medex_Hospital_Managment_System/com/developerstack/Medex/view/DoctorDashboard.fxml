@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="DoctorDashboardContext" prefHeight="491.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.DoctorDashboardController">
+<AnchorPane fx:id="DoctorDashboardContext" prefHeight="491.0" prefWidth="902.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.DoctorDashboardController">
    <children>
       <Label alignment="CENTER" layoutY="13.0" prefHeight="29.0" prefWidth="313.0" text="Doctor DashBoard" textFill="#e40000">
          <font>
