@@ -55,7 +55,7 @@ public class DoctorDashboardController {
     private void checkDoctorDto() throws IOException {
         Optional<DoctorDto> selecterDoctor = Database.doctorTable.stream().
                 filter(doctorDto -> doctorDto.getEmail().
-                        equals("kar@nethu.com")).findFirst();
+                        equals("kar@neth.com")).findFirst();
         if(!selecterDoctor.isPresent()){
             Stage stage=new Stage();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DoctorRegistrationForm.fxml"))));

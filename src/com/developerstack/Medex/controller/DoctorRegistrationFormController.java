@@ -2,6 +2,7 @@ package com.developerstack.Medex.controller;
 
 import com.developerstack.Medex.db.Database;
 import com.developerstack.Medex.dto.DoctorDto;
+import com.developerstack.Medex.dto.UserDto;
 import com.developerstack.Medex.enums.Gender;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
@@ -11,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import util.Cookie;
 
 public class DoctorRegistrationFormController {
 
@@ -24,6 +26,18 @@ public class DoctorRegistrationFormController {
     public JFXTextField txtNic;
     public JFXTextField txtContact;
     public JFXButton doctorRegistrationFormPane;
+
+
+    public void initialize(){
+        loadData();
+    }
+
+    private void loadData() {
+        UserDto selectedUser = Cookie.selectedUser;
+        txtFirstName.setText(selectedUser.getFirstName());
+        txtLastName.setText(selectedUser.getLastName());
+        txtEmail.setText(selectedUser.getEmail());
+    }
 
     public void submitDataOnAction(ActionEvent actionEvent) {
         DoctorDto doctorDto=new DoctorDto(txtFirstName.getText(),
