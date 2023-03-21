@@ -24,7 +24,7 @@ public class Database {
 
 //        ------------------------------------------------
         doctorTable.add(new DoctorDto("Ravindu","Nethmina"
-        ,"964374823v","+947684932","kar@neth.com",
+        ,"964374823v","+947684932","kar@nethu.com",
                 "Eye","Galle", Gender.MALE));
     }
 

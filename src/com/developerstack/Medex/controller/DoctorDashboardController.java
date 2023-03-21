@@ -57,7 +57,9 @@ public class DoctorDashboardController {
                 filter(doctorDto -> doctorDto.getEmail().
                         equals("kar@nethu.com")).findFirst();
         if(!selecterDoctor.isPresent()){
-            setUi("DoctorRegistrationForm");
+            Stage stage=new Stage();
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DoctorRegistrationForm.fxml"))));
+            stage.show();
         }
     }
 
