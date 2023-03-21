@@ -1,6 +1,8 @@
 package com.developerstack.Medex.controller;
 
 
+import com.developerstack.Medex.db.Database;
+import com.developerstack.Medex.dto.DoctorDto;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -18,6 +20,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Optional;
 
 public class DoctorDashboardController {
     public AnchorPane DoctorDashboardContext;
@@ -46,13 +49,25 @@ public class DoctorDashboardController {
     public void initialize() throws IOException {
 //        checkUser();
         intializeData();
+        checkDoctorDto();
     }
+
+    private void checkDoctorDto() throws IOException {
+        Optional<DoctorDto> selecterDoctor = Database.doctorTable.stream().
+                filter(doctorDto -> doctorDto.getEmail().
+                        equals("kar@nethu.com")).findFirst();
+        if(!selecterDoctor.isPresent()){
+            setUi("DoctorRegistrationForm");
+        }
+    }
+
     private void setUi(String location) throws IOException {
         Stage stage = (Stage) DoctorDashboardContext.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/"+location+".fxml"))));
     }
 
-    public void btnLogOutOnAction(ActionEvent actionEvent) {
+    public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("LoginForm");
     }
 }
 
