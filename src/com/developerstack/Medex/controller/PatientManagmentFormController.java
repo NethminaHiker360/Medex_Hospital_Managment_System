@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class PatientManagmentFormController {
@@ -29,6 +30,18 @@ public class PatientManagmentFormController {
     
     public void initialize(){
         loadAllData("");
+        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            loadAllData(newValue);
+        });
+
+        colNic.setCellValueFactory(new PropertyValueFactory<>("nic"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        coloFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        colDOB.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        colgender.setCellValueFactory(new PropertyValueFactory<>("gender"));
     }
 
     private void loadAllData(String s) {

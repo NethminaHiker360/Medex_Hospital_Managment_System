@@ -12,6 +12,7 @@ public class PatientTm {
     private Gender gender;
     private String address;
     private int age;
+    private String email;
 
     public PatientTm(String nic, String firstName, String lastName, Date dob, Gender gender, String address, int age, String email) {
         this.nic = nic;
@@ -27,7 +28,6 @@ public class PatientTm {
     public PatientTm() {
     }
 
-    private String email;
 
     public String getNic() {
         return nic;
