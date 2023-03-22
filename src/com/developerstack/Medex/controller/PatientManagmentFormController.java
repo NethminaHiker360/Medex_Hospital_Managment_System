@@ -13,6 +13,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+
 public class PatientManagmentFormController {
 
     public JFXTextField txtSearch;
@@ -50,15 +54,18 @@ public class PatientManagmentFormController {
 //        Filtering
         for (PatientDto dto: Database.patientTable) {
             if(
-                    dto.getFirstName().contains(s) ||
-                            dto.getLastName().contains(s)||
-                            dto.getEmail().contains(s)
+                    dto.getFirstName().toLowerCase().contains(s)||
+                    dto.getLastName().toLowerCase().contains(s)||
+                    dto.getEmail().toLowerCase().contains(s)
             ){
                 patientTmList.add(new PatientTm(
                         dto.getNic(), dto.getFirstName(),
-                        dto.getLastName(), dto.getDob(),
-                        dto.getGender(), dto.getAddress(),
-                        10, dto.getEmail()
+                        dto.getLastName(),
+                        new SimpleDateFormat("yyyy-MM-dd").format(dto.getDob()), // ------ make simple date format
+                        dto.getGender(),
+                        dto.getAddress(),
+                        10, // ----------- Dynamically calculate Age
+                        dto.getEmail()
                 ));
             }
         }

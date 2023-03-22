@@ -2,19 +2,17 @@ package com.developerstack.Medex.view.tm;
 
 import com.developerstack.Medex.enums.Gender;
 
-import java.util.Date;
-
 public class PatientTm {
     private String nic;
     private String firstName;
     private String lastName;
-    private Date dob;
+    private String dob;
     private Gender gender;
     private String address;
     private int age;
     private String email;
 
-    public PatientTm(String nic, String firstName, String lastName, Date dob, Gender gender, String address, int age, String email) {
+    public PatientTm(String nic, String firstName, String lastName, String dob, Gender gender, String address, int age, String email) {
         this.nic = nic;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -53,11 +51,11 @@ public class PatientTm {
         this.lastName = lastName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
