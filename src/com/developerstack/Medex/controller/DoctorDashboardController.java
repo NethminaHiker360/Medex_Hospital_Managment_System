@@ -3,6 +3,7 @@ package com.developerstack.Medex.controller;
 
 import com.developerstack.Medex.db.Database;
 import com.developerstack.Medex.dto.DoctorDto;
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -26,6 +27,7 @@ public class DoctorDashboardController {
     public AnchorPane DoctorDashboardContext;
     public Label lblDate;
     public Label lblTime;
+    public JFXButton btnPatientManagment;
 
     public void checkUser() throws IOException {
         if(null==Cookie.selectedUser){
@@ -70,6 +72,10 @@ public class DoctorDashboardController {
 
     public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
         setUi("LoginForm");
+    }
+
+    public void btnPatientManagmentOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("PatientManagmentForm");
     }
 }
 
