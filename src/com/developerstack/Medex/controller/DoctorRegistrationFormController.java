@@ -11,6 +11,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import util.Cookie;
 
@@ -25,11 +26,24 @@ public class DoctorRegistrationFormController {
     public JFXTextField txtLastName;
     public JFXTextField txtNic;
     public JFXTextField txtContact;
-    public JFXButton doctorRegistrationFormPane;
+
+    public JFXButton btnSubmit;
+    public AnchorPane doctorRegisterformContext;
 
 
     public void initialize(){
         loadData();
+        txtNic.textProperty().addListener
+                ((observable, oldValue, newValue) -> {
+            if(Database.doctorTable.stream().filter(doctorDto ->
+                    doctorDto.getNic().equals(newValue)).
+                    findFirst().isPresent()){
+                btnSubmit.setDisable(true);
+                txtNic.setStyle("-fx-border-color:red");
+                return;
+            }
+            btnSubmit.setDisable(false);
+        });
     }
 
     private void loadData() {
@@ -47,7 +61,7 @@ public class DoctorRegistrationFormController {
                 rbtnMale.isSelected()? Gender.MALE:Gender.FEMALE);
 
         Database.doctorTable.add(doctorDto);
-        Stage stage = (Stage) doctorRegistrationFormPane.getScene().getWindow();
+        Stage stage = (Stage) btnSubmit.getScene().getWindow();
         stage.close();
     }
 }
