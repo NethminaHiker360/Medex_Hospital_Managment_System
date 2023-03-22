@@ -16,6 +16,19 @@ public class PatientDto {
     public PatientDto() {
     }
 
+    @Override
+    public String toString() {
+        return "PatientDto{" +
+                "nic='" + nic + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
+                ", gender=" + gender +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public PatientDto(String nic, String firstName, String lastName, Date dob, Gender gender, String address, String email) {
         this.nic = nic;
         this.firstName = firstName;
