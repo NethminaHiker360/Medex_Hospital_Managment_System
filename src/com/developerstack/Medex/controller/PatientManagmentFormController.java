@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,7 +32,11 @@ public class PatientManagmentFormController {
     public TableColumn colAddress;
     public TableColumn colAge;
     public TableColumn colEmail;
-    
+    public AnchorPane DoctorDashboardContext;
+    public Label lblDate;
+    public Label lblTime;
+    public JFXButton btnPatientManagment;
+
     public void initialize(){
         loadAllData("");
         txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -74,5 +79,8 @@ public class PatientManagmentFormController {
 
     public void btnLogOutOnAction(ActionEvent actionEvent) {
         
+    }
+
+    public void btnPatientManagmentOnAction(ActionEvent actionEvent) {
     }
 }
