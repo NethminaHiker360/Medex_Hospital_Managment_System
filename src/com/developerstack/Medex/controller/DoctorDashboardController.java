@@ -67,6 +67,7 @@ public class DoctorDashboardController {
     private void setUi(String location) throws IOException {
         Stage stage = (Stage) DoctorDashboardContext.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/"+location+".fxml"))));
+        // Avoid Boiler Plate code to optimize performance and code readabiliy
     }
 
     public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {

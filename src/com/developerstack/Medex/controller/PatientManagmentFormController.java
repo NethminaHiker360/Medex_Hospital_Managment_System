@@ -74,7 +74,7 @@ public class PatientManagmentFormController {
     }
 
     public void btnLogOutOnAction(ActionEvent actionEvent) {
-        
+        // Implement when logout button click function
     }
 
     public void btnPatientManagmentOnAction(ActionEvent actionEvent) {
