@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="DoctorDashboardContext" prefHeight="491.0" prefWidth="902.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.PatientManagmentFormController">
+<AnchorPane fx:id="DoctorDashboardContext" prefHeight="491.0" prefWidth="902.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.PatientDashboardFormController">
     <children>
         <Label alignment="CENTER" layoutY="13.0" prefHeight="29.0" prefWidth="313.0" text="Patient DashBoard" textFill="#e40000">
             <font>
@@ -33,7 +33,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="btnPatientManagment" buttonType="RAISED" layoutX="21.0" layoutY="86.0" onAction="#btnPatientManagmentOnAction" prefHeight="81.0" prefWidth="272.0" style="-fx-background-color: #0096C9;" text="Patient Managment" textFill="WHITE">
+        <JFXButton fx:id="btnPatientManagment" buttonType="RAISED" layoutX="21.0" layoutY="86.0" onAction="#btnPatientManagmentOnAction" prefHeight="81.0" prefWidth="272.0" style="-fx-background-color: #0096C9;" text="Appoiments" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="22.0" />
             </font>

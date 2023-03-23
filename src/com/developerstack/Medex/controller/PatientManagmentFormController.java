@@ -32,10 +32,6 @@ public class PatientManagmentFormController {
     public TableColumn colAddress;
     public TableColumn colAge;
     public TableColumn colEmail;
-    public AnchorPane DoctorDashboardContext;
-    public Label lblDate;
-    public Label lblTime;
-    public JFXButton btnPatientManagment;
 
     public void initialize(){
         loadAllData("");
