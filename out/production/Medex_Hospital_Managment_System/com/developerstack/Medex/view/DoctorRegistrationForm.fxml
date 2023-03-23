@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="doctorRegisterformContext" prefHeight="475.0" prefWidth="679.0" style="-fx-background-color: #D7E6E3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.developerstack.Medex.controller.DoctorRegistrationFormController">
+   <children>
+      <JFXButton fx:id="btnSubmit" buttonType="RAISED" layoutX="433.0" layoutY="417.0" onAction="#submitDataOnAction" prefHeight="37.0" prefWidth="224.0" style="-fx-background-color: #008CFF;" text="Submit Data" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="183.0" layoutY="14.0" prefHeight="29.0" prefWidth="313.0" text="Doctor Registration" textFill="#e40000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="9.0" layoutY="51.0" prefHeight="0.0" prefWidth="580.0" />
+      <JFXTextField fx:id="txtFirstName" editable="false" labelFloat="true" layoutX="15.0" layoutY="84.0" prefHeight="37.0" prefWidth="304.0" promptText="First Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtLastName" editable="false" labelFloat="true" layoutX="360.0" layoutY="84.0" prefHeight="37.0" prefWidth="304.0" promptText="Last Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtNic" labelFloat="true" layoutX="475.0" layoutY="169.0" prefHeight="37.0" prefWidth="189.0" promptText="NIC">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="251.0" layoutY="169.0" prefHeight="37.0" prefWidth="200.0" promptText="Contact">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXRadioButton fx:id="rbtnMale" layoutX="421.0" layoutY="246.0" selected="true" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton layoutX="512.0" layoutY="246.0" text="Female" toggleGroup="$gender" />
+      <JFXTextArea fx:id="txtAddress" labelFloat="true" layoutX="21.0" layoutY="311.0" prefHeight="87.0" prefWidth="636.0" promptText="Address">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextArea>
+      <JFXTextField fx:id="txtSpecialization" labelFloat="true" layoutX="20.0" layoutY="238.0" prefHeight="37.0" prefWidth="335.0" promptText="Specializations">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" editable="false" labelFloat="true" layoutX="17.0" layoutY="169.0" prefHeight="37.0" prefWidth="200.0" promptText="Email">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>
