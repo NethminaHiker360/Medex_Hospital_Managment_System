@@ -16,11 +16,9 @@ import javafx.util.Duration;
 import util.Cookie;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Optional;
 
 public class DoctorDashboardController {
