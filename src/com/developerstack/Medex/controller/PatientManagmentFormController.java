@@ -58,6 +58,7 @@ public class PatientManagmentFormController {
                     dto.getFirstName().toLowerCase().contains(s)||
                     dto.getLastName().toLowerCase().contains(s)||
                     dto.getEmail().toLowerCase().contains(s)
+                    // search function work for name and email botjh
             ){
                 patientTmList.add(new PatientTm(
                         dto.getNic(), dto.getFirstName(),

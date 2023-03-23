@@ -38,6 +38,7 @@ public class LoginFormController {
                         setUi("DoctorDashBoard");
                         new Alert(Alert.AlertType.WARNING,"Sucsessfully Login!").show();
                         return;
+                        // show alerts when sucsessfullt login
                     }else {
                         new Alert(Alert.AlertType.WARNING,"Wrong Account Type!").show();
                         return;
