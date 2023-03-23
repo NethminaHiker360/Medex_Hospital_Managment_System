@@ -44,6 +44,7 @@ public class DoctorDashboardController {
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+        // Set Time to label
     }
 
     public void initialize() throws IOException {
