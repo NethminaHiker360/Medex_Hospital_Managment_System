@@ -13,6 +13,8 @@ public class PatientDashboardFormController {
     public AnchorPane PatientDashboardContext;
     public JFXButton btnAppoiments;
 
+//  Suppose to work with realdatabase mySql
+
     public void btnAppoimentsOnAction(ActionEvent actionEvent) {
     }
 

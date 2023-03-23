@@ -66,7 +66,7 @@ public class PatientManagmentFormController {
                         new SimpleDateFormat("yyyy-MM-dd").format(dto.getDob()), // ------ make simple date format
                         dto.getGender(),
                         dto.getAddress(),
-                        10, // ----------- Dynamically calculate Age
+                        10, // ----------- Dynamically calculate Age Try it
                         dto.getEmail()
                 ));
             }
