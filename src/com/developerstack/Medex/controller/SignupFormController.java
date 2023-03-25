@@ -36,7 +36,7 @@ public class SignupFormController {
         User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText().trim().toLowerCase(),
                 txtPassword.getText(),accountType);
         try {
-            Class.forName("com.mysql.jdbc.cj.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
                     ("jdbc:mysql://localhost:3306/medex_home_git",
                             "root","1234");
