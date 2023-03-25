@@ -20,6 +20,9 @@ public class PatientDashboardFormController {
 
     public void btnLogOutOnAction(ActionEvent actionEvent) {
     }
+
+    public void navigateToNewAppoimentPage(ActionEvent actionEvent) {
+    }
 }
 
 

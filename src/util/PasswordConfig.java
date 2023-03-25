@@ -7,7 +7,7 @@ public class PasswordConfig {
         return BCrypt.hashpw(text,BCrypt.gensalt(10));
         // return encrypt password
     }
-    public boolean decrypt(String rawPassword,String encryptPassword{
+    public boolean decrypt(String rawPassword,String encryptPassword){
         return BCrypt.checkpw(rawPassword,encryptPassword);
         // check password is correct or not
     }
