@@ -31,13 +31,11 @@ public class SignupFormController {
     public ToggleGroup AccoutType;
 
 
-    String email=txtEmail.getText();
-    AccountType accountType=rbtnDoctor.isSelected()? AccountType.DOCTOR:AccountType.PATIENT;
-    User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText(),
-            txtPassword.getText(),accountType);
-
     public void signupOnAction(ActionEvent actionEvent) throws IOException {
-
+        String email=txtEmail.getText();
+        AccountType accountType=rbtnDoctor.isSelected()? AccountType.DOCTOR:AccountType.PATIENT;
+        User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText(),
+                txtPassword.getText(),accountType);
         Optional<User> user = Database.userTable.stream().filter(userDto -> userDto.getEmail().equals(email.toLowerCase())).findFirst();
         if(user.isPresent()){
             new Alert(Alert.AlertType.WARNING,"Email Already exists!").show();
@@ -49,7 +47,7 @@ public class SignupFormController {
             try {
                 Class.forName("com.mysql.jdbc.cj.Driver");
                 Connection connection = DriverManager.getConnection
-                        ("jdbc:mysql;//localhost:3306/medex_home_git",
+                        ("jdbc:mysql://localhost:3306/medex_home_git",
                                 "root","1234");
                 String sql="INSERT INTO user VALUES (?,?,?,?,?,?)";
                 PreparedStatement pstm = connection.prepareStatement(sql);
