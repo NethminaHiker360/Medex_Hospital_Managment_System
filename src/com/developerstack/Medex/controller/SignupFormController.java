@@ -52,6 +52,7 @@ public class SignupFormController {
             int isSaved = pstm.executeUpdate();
             if (isSaved>0){
                 new Alert(Alert.AlertType.CONFIRMATION,"Saved!").show();
+                setUi("LoginForm");
             }else {
                 new Alert(Alert.AlertType.WARNING,"Try Again").show();
             }
