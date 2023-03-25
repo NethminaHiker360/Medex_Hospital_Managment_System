@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.IdGenerator;
 import util.PasswordConfig;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class SignupFormController {
                             "root","1234");
             String sql="INSERT INTO user VALUES (?,?,?,?,?,?)";
             PreparedStatement pstm = connection.prepareStatement(sql);
-            pstm.setInt(1,1001);
+            pstm.setInt(1,new IdGenerator().generateId());
             pstm.setString(2,new_user.getFirstName());
             pstm.setString(3,new_user.getLastName());
             pstm.setString(4,new_user.getEmail());
