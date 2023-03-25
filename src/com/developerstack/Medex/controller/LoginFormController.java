@@ -1,7 +1,7 @@
 package com.developerstack.Medex.controller;
 
 import com.developerstack.Medex.db.Database;
-import com.developerstack.Medex.dto.UserDto;
+import com.developerstack.Medex.dto.User;
 import com.developerstack.Medex.enums.AccountType;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
@@ -13,7 +13,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import util.Cookie;
 
 import java.io.IOException;
@@ -30,7 +29,7 @@ public class LoginFormController {
         String password=txtPassword.getText();
         AccountType accountType=rbtnDoctor.isSelected()? AccountType.DOCTOR:AccountType.PATIENT;
 
-        for (UserDto userDto:Database.userTable) {
+        for (User userDto:Database.userTable) {
             if (email.trim().toLowerCase().equals(userDto.getEmail())){
                 if(password.equals(userDto.getPassword())){
                     if (accountType.equals(userDto.getAccountType())){
