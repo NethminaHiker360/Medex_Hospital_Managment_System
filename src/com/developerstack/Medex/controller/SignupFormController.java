@@ -1,6 +1,4 @@
 package com.developerstack.Medex.controller;
-
-import com.developerstack.Medex.db.Database;
 import com.developerstack.Medex.dto.User;
 import com.developerstack.Medex.enums.AccountType;
 import com.jfoenix.controls.JFXPasswordField;
@@ -13,13 +11,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.PasswordConfig;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Optional;
 
 public class SignupFormController {
     public AnchorPane signupformContext;
@@ -34,7 +32,7 @@ public class SignupFormController {
     public void signupOnAction(ActionEvent actionEvent) throws IOException {
         AccountType accountType=rbtnDoctor.isSelected()? AccountType.DOCTOR:AccountType.PATIENT;
         User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText().trim().toLowerCase(),
-                txtPassword.getText(),accountType);
+                new PasswordConfig().encrypt(txtPassword.getText()),accountType);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
