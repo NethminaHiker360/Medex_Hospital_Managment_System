@@ -3,6 +3,7 @@ package util;
 import com.developerstack.Medex.db.DBConnection;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CrudUtil {
@@ -23,5 +24,8 @@ public class CrudUtil {
         }*/
         //=====================================
         return execute(sql, Params).executeUpdate()>0;
+    }
+    public static ResultSet executeQuery(String sql, Object... Params) throws SQLException, ClassNotFoundException {
+        return execute(sql, Params).executeQuery();
     }
 }
