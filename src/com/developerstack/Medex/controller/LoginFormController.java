@@ -33,7 +33,7 @@ public class LoginFormController {
         //===========================
 
         try {
-            ResultSet rst = CrudUtil.executeQuery("SELECT * FROM user WHERE email=? AND account_type=?",
+            ResultSet rst = CrudUtil.execute("SELECT * FROM user WHERE email=? AND account_type=?",
                     email,accountType.name());
             if(rst.next()){
                 new PasswordConfig().decrypt(password,rst.getString("password"));

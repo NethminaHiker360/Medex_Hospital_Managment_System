@@ -37,7 +37,7 @@ public class SignupFormController {
         User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText().trim().toLowerCase(),
                 new PasswordConfig().encrypt(txtPassword.getText()),accountType);
         try {
-            boolean isSaved = CrudUtil.executeUpdate("INSERT INTO user VALUES (?,?,?,?,?,?)",
+            boolean isSaved = CrudUtil.execute("INSERT INTO user VALUES (?,?,?,?,?,?)",
                     new IdGenerator().generateId(),new_user.getFirstName(),
                     new_user.getLastName(),new_user.getEmail(),new_user.getPassword(),
                     new_user.getAccountType().name()
