@@ -14,6 +14,14 @@ public class CrudUtil {
         return pstm;
     }
     public static boolean executeUpdate(String sql, Object... Params) throws SQLException, ClassNotFoundException {
+        /*PreparedStatement pstm = execute(sql, Params);
+        int i = pstm.executeUpdate();
+        if (i>0){
+            return true;
+        }else {
+            return false;
+        }*/
+        //=====================================
         return execute(sql, Params).executeUpdate()>0;
     }
 }
