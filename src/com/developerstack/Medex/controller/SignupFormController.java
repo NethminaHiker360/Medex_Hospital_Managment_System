@@ -12,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.CrudUtil;
 import util.IdGenerator;
 import util.PasswordConfig;
 
@@ -36,17 +37,12 @@ public class SignupFormController {
         User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText().trim().toLowerCase(),
                 new PasswordConfig().encrypt(txtPassword.getText()),accountType);
         try {
-            String sql="INSERT INTO user VALUES (?,?,?,?,?,?)";
-            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-            pstm.setInt(1,new IdGenerator().generateId());
-            pstm.setString(2,new_user.getFirstName());
-            pstm.setString(3,new_user.getLastName());
-            pstm.setString(4,new_user.getEmail());
-            pstm.setString(5,new_user.getPassword());
-            pstm.setString(6,new_user.getAccountType().name());
-
-            int isSaved = pstm.executeUpdate();
-            if (isSaved>0){
+            boolean isSaved = CrudUtil.executeUpdate("INSERT INTO user VALUES (?,?,?,?,?,?)",
+                    new IdGenerator().generateId(),new_user.getFirstName(),
+                    new_user.getLastName(),new_user.getEmail(),new_user.getPassword(),
+                    new_user.getAccountType().name()
+                    );
+            if (isSaved){
                 new Alert(Alert.AlertType.CONFIRMATION,"Saved!").show();
                 setUi("LoginForm");
             }else {

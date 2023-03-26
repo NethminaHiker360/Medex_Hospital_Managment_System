@@ -7,9 +7,7 @@ import java.sql.*;
 public class IdGenerator {
     public int generateId() {
         try {
-            String sql = "SELECT user_id FROM user ORDER BY user_id DESC LIMIT 1";
-            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-            ResultSet rst = pstm.executeQuery();
+            ResultSet rst = CrudUtil.executeQuery("SELECT user_id FROM user ORDER BY user_id DESC LIMIT 1");
             if (rst.next()){
                 return rst.getInt(1)+1;
             }else {
