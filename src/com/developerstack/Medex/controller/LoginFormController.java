@@ -1,5 +1,6 @@
 package com.developerstack.Medex.controller;
 
+import com.developerstack.Medex.db.DBConnection;
 import com.developerstack.Medex.enums.AccountType;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
@@ -31,12 +32,8 @@ public class LoginFormController {
         //===========================
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/medex_home_git",
-                            "root","1234");
             String sql="SELECT * FROM user WHERE email=? AND account_type=?";
-            PreparedStatement pstm = connection.prepareStatement(sql);
+            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
             pstm.setString(1,email);
             pstm.setString(2,accountType.name());
             ResultSet rst = pstm.executeQuery();

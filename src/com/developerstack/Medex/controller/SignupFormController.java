@@ -1,4 +1,5 @@
 package com.developerstack.Medex.controller;
+import com.developerstack.Medex.db.DBConnection;
 import com.developerstack.Medex.dto.User;
 import com.developerstack.Medex.enums.AccountType;
 import com.jfoenix.controls.JFXPasswordField;
@@ -35,12 +36,8 @@ public class SignupFormController {
         User new_user=new User(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText().trim().toLowerCase(),
                 new PasswordConfig().encrypt(txtPassword.getText()),accountType);
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/medex_home_git",
-                            "root","1234");
             String sql="INSERT INTO user VALUES (?,?,?,?,?,?)";
-            PreparedStatement pstm = connection.prepareStatement(sql);
+            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
             pstm.setInt(1,new IdGenerator().generateId());
             pstm.setString(2,new_user.getFirstName());
             pstm.setString(3,new_user.getLastName());
