@@ -12,6 +12,7 @@ public class PatientDashboardFormController {
     public JFXButton btnPatientManagment;
     public AnchorPane PatientDashboardContext;
     public JFXButton btnAppoiments;
+    public AnchorPane DoctorDashboardContext;
 
 //  Suppose to work with realdatabase mySql
 
@@ -22,6 +23,9 @@ public class PatientDashboardFormController {
     }
 
     public void navigateToNewAppoimentPage(ActionEvent actionEvent) {
+    }
+
+    public void btnPatientManagmentOnAction(ActionEvent actionEvent) {
     }
 }
 
