@@ -12,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.CrudUtil;
 import util.PasswordConfig;
 
 import java.io.IOException;
@@ -32,11 +33,8 @@ public class LoginFormController {
         //===========================
 
         try {
-            String sql="SELECT * FROM user WHERE email=? AND account_type=?";
-            PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-            pstm.setString(1,email);
-            pstm.setString(2,accountType.name());
-            ResultSet rst = pstm.executeQuery();
+            ResultSet rst = CrudUtil.executeQuery("SELECT * FROM user WHERE email=? AND account_type=?",
+                    email,accountType.name());
             if(rst.next()){
                 new PasswordConfig().decrypt(password,rst.getString("password"));
                 if (accountType.equals(AccountType.DOCTOR)){
